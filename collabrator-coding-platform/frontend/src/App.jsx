@@ -1,6 +1,14 @@
-function App(){
+import {Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Room from './pages/Room';
+
+function App() {
   return (
-    <h1>Collaborative coding platform</h1>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/room/:roomId" element={<Room />} />
+    </Routes>
   );
 }
+
 export default App;
