@@ -20,28 +20,30 @@ function Home() {
   };
 
   return (
-    <div style={{textAlign:"center", marginTop:"100px"}}>
+    <div className="home-container">
+      <div className="home-card glass-panel">
+        <h1 className="gradient-text" style={{textAlign: "center", marginBottom: "0.5rem"}}>
+          Colcode
+        </h1>
+        <p style={{textAlign:"center", color:"var(--text-secondary)", marginBottom:"1.5rem"}}>
+          Real-time collaborative coding workspace
+        </p>
 
-      <h1>Collaborative Coding Platform</h1>
+        <input
+          placeholder="Enter Username"
+          onChange={(e)=>setUsername(e.target.value)}
+        />
 
-      <input
-        placeholder="Enter Username"
-        onChange={(e)=>setUsername(e.target.value)}
-      />
+        <input
+          placeholder="Enter Room ID"
+          onChange={(e)=>setRoomId(e.target.value)}
+        />
 
-      <br/><br/>
-
-      <input
-        placeholder="Enter Room ID"
-        onChange={(e)=>setRoomId(e.target.value)}
-      />
-
-      <br/><br/>
-
-      <button onClick={createRoom}>Create Room</button>
-
-      <button onClick={joinRoom}>Join Room</button>
-
+        <div style={{display: "flex", gap: "10px", marginTop: "1rem"}}>
+          <button className="btn btn-success" style={{flex: 1}} onClick={createRoom}>Create Room</button>
+          <button className="btn" style={{flex: 1}} onClick={joinRoom}>Join Room</button>
+        </div>
+      </div>
     </div>
   );
 }
